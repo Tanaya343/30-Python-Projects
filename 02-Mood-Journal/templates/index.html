@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mood & Journal Logger</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>🌞 How are you feeling today?</h1>
+    <form action="/submit" method="post">
+        <label>Mood:</label>
+        <select name="mood" required>
+            <option value="Happy">😊 Happy</option>
+            <option value="Sad">😢 Sad</option>
+            <option value="Excited">😃 Excited</option>
+            <option value="Angry">😡 Angry</option>
+            <option value="Neutral">😐 Neutral</option>
+        </select><br><br>
+
+        <label>Journal:</label><br>
+        <textarea name="journal" rows="5" cols="40" required></textarea><br><br>
+
+        <button type="submit">Save Entry</button>
+    </form>
+</body>
+</html>

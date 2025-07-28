@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Journal Entries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>📔 My Journal Entries</h1>
+
+    <table>
+    <thead>
+        <tr>
+            <th>Date & Time</th>
+            <th>Title</th>
+            <th>Entry</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in entries %}
+        <tr>
+            <td>{{ entry[0] }}</td>
+            <td>{{ entry[1] }}</td>
+            <td>{{ entry[2] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<style>table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #5b3200;
+}
+
+tr:nth-child(even) {
+    background-color: #fcf8f3;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+</style>
+    <a href="/">➕ Add a new entry</a>
+</body>
+</html>
